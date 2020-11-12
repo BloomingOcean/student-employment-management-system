@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.Student">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="stu_id" jdbcType="INTEGER" property="stuId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="political_status" jdbcType="VARCHAR" property="politicalStatus" />
+    <result column="id_number" jdbcType="VARCHAR" property="idNumber" />
+    <result column="only_child" jdbcType="VARCHAR" property="onlyChild" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="qq_number" jdbcType="VARCHAR" property="qqNumber" />
+    <result column="counselor_id" jdbcType="INTEGER" property="counselorId" />
+    <result column="student_status_id" jdbcType="INTEGER" property="studentStatusId" />
+    <result column="hukou_id" jdbcType="INTEGER" property="hukouId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+</mapper>
