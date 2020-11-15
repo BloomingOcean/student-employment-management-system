@@ -10,32 +10,36 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Data
-@ApiModel(value = "学生基础信息表")
+@ApiModel(value = "教师基础信息表")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Teacher {
 
     @Id
-    @Column(name = "stu_id")
-    @ApiModelProperty(value = "学号")
+    @Column(name = "teacher_id")
+    @ApiModelProperty(value = "教师号")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer stuId;
+    private Integer teacherId;
 
     @Column(name = "name")
-    @ApiModelProperty(value = "名字")
+    @ApiModelProperty(value = "教师姓名")
     private String name;
 
+    @Column(name = "job_number")
+    @ApiModelProperty(value = "教师工号")
+    private Integer jobNumber;
+
     @Column(name = "gender")
-    @ApiModelProperty(value = "性别")
+    @ApiModelProperty(value = "教师性别")
     private String gender;
 
     @Column(name = "nation")
     @ApiModelProperty(value = "民族")
     private String nation;
 
-    @Column(name = "birthday")
-    @ApiModelProperty(value = "生日")
-    private Date birthday;
+    @Column(name = "birth_date")
+    @ApiModelProperty(value = "出生日期")
+    private Date birthDate;
 
     @Column(name = "political_status")
     @ApiModelProperty(value = "政治面貌")
@@ -45,35 +49,33 @@ public class Student {
     @ApiModelProperty(value = "身份证号")
     private String idNumber;
 
-    @Column(name = "only_child")
-    @ApiModelProperty(value = "独生子女")
-    private String onlyChild;
+    @Column(name = "teacher_grade")
+    @ApiModelProperty(value = "教师等级")
+    private String teacherGrade;
+
+    @Column(name = "address")
+    @ApiModelProperty(value = "家庭地址")
+    private String address;
 
     @Column(name = "phone_number")
-    @ApiModelProperty(value = "电话号码")
+    @ApiModelProperty(value = "手机号码")
     private String phoneNumber;
 
     @Column(name = "email")
-    @ApiModelProperty(value = "电子邮件")
+    @ApiModelProperty(value = "电子邮箱")
     private String email;
 
     @Column(name = "qq_number")
-    @ApiModelProperty(value = "qq号码")
+    @ApiModelProperty(value = "QQ号码")
     private String qqNumber;
 
-    @Column(name = "counselor_id")
-    @ApiModelProperty(value = "辅导员id")
-    private Integer counselorId;
-
-    @Column(name = "student_status_id")
-    @ApiModelProperty(value = "学籍信息id")
-    private Integer studentStatusId;
-
-    @Column(name = "hukou_id")
-    @ApiModelProperty(value = "户口id")
-    private Integer hukouId;
+    @Column(name = "course_id")
+    @ApiModelProperty(value = "课程id")
+    private Integer courseId;
 
     @Column(name = "password")
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "老师密码")
     private String password;
+
+
 }
