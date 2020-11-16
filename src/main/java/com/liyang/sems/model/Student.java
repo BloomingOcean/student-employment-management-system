@@ -13,11 +13,12 @@ import javax.persistence.*;
 @ApiModel(value = "学生基础信息表")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "student")
 public class Student {
 
     @Id
     @Column(name = "stu_id")
-    @ApiModelProperty(value = "学号")
+    @ApiModelProperty(value = "学号(主键)")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer stuId;
 
@@ -76,4 +77,13 @@ public class Student {
     @Column(name = "password")
     @ApiModelProperty(value = "密码")
     private String password;
+
+    @Column(name = "class_bj_id")
+    @ApiModelProperty(value = "所在班级ID")
+    private Integer classBjId;
+
+    @Column(name = "course_id")
+    @ApiModelProperty(value = "所在课程ID")
+    private Integer courseId;
+
 }

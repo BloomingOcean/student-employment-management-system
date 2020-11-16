@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.ArchivesMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.Archives">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="archives_relationship_id" jdbcType="INTEGER" property="archivesRelationshipId" />
+    <result column="agent_type" jdbcType="VARCHAR" property="agentType" />
+    <result column="w_organizational_relationship" jdbcType="VARCHAR" property="wOrganizationalRelationship" />
+    <result column="talent_agency_logo" jdbcType="VARCHAR" property="talentAgencyLogo" />
+    <result column="flexible_contract_sign" jdbcType="VARCHAR" property="flexibleContractSign" />
+    <result column="flexible_contract_unit_name" jdbcType="VARCHAR" property="flexibleContractUnitName" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+  </resultMap>
+</mapper>

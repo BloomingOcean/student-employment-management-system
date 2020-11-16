@@ -20,5 +20,7 @@
     <result column="student_status_id" jdbcType="INTEGER" property="studentStatusId" />
     <result column="hukou_id" jdbcType="INTEGER" property="hukouId" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="class_bj_id" jdbcType="INTEGER" property="classBjId" />
+    <result column="course_id" jdbcType="INTEGER" property="courseId" />
   </resultMap>
 </mapper>

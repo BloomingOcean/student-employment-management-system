@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.PostgraduateInfoMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.PostgraduateInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="postgraduate_info_id" jdbcType="INTEGER" property="postgraduateInfoId" />
+    <result column="match_major" jdbcType="VARCHAR" property="matchMajor" />
+    <result column="proceed_college" jdbcType="VARCHAR" property="proceedCollege" />
+    <result column="report_card_number" jdbcType="VARCHAR" property="reportCardNumber" />
+    <result column="school_postcode" jdbcType="VARCHAR" property="schoolPostcode" />
+    <result column="forwarding_college_files" jdbcType="VARCHAR" property="forwardingCollegeFiles" />
+    <result column="location_admission_institution" jdbcType="VARCHAR" property="locationAdmissionInstitution" />
+    <result column="recipient_progression_file" jdbcType="VARCHAR" property="recipientProgressionFile" />
+    <result column="recipient_phone_number" jdbcType="VARCHAR" property="recipientPhoneNumber" />
+    <result column="w_fulltime_postgraduate" jdbcType="VARCHAR" property="wFulltimePostgraduate" />
+    <result column="w_exempt_graduate_students" jdbcType="VARCHAR" property="wExemptGraduateStudents" />
+    <result column="orientation_commissioning_unit" jdbcType="VARCHAR" property="orientationCommissioningUnit" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+  </resultMap>
+</mapper>

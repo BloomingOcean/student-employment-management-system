@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.EmploymentInfoMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.EmploymentInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="employment_info_id" jdbcType="INTEGER" property="employmentInfoId" />
+    <result column="unit_id" jdbcType="INTEGER" property="unitId" />
+    <result column="dispatch_time" jdbcType="DATE" property="dispatchTime" />
+    <result column="dispatch_registration_card_number" jdbcType="VARCHAR" property="dispatchRegistrationCardNumber" />
+    <result column="registration_certificate_issuance_category" jdbcType="VARCHAR" property="registrationCertificateIssuanceCategory" />
+    <result column="signed_unit_location" jdbcType="VARCHAR" property="signedUnitLocation" />
+    <result column="relocation_unit_name" jdbcType="VARCHAR" property="relocationUnitName" />
+    <result column="file_forwarding_unit_postcode" jdbcType="VARCHAR" property="fileForwardingUnitPostcode" />
+    <result column="file_forwarding_unit" jdbcType="VARCHAR" property="fileForwardingUnit" />
+    <result column="file_forwarding_address" jdbcType="VARCHAR" property="fileForwardingAddress" />
+    <result column="entry_date" jdbcType="DATE" property="entryDate" />
+    <result column="graduate_whereabouts" jdbcType="VARCHAR" property="graduateWhereabouts" />
+    <result column="special_Instructions" jdbcType="VARCHAR" property="specialInstructions" />
+    <result column="occupational_category" jdbcType="VARCHAR" property="occupationalCategory" />
+    <result column="job_satisfaction" jdbcType="VARCHAR" property="jobSatisfaction" />
+    <result column="conscript_soldiers" jdbcType="VARCHAR" property="conscriptSoldiers" />
+    <result column="w_employment" jdbcType="VARCHAR" property="wEmployment" />
+    <result column="other_info" jdbcType="VARCHAR" property="otherInfo" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+  </resultMap>
+</mapper>

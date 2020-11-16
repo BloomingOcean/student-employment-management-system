@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.EmploymentSurveyMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.EmploymentSurvey">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="employment_survey_id" jdbcType="INTEGER" property="employmentSurveyId" />
+    <result column="expected_work_area" jdbcType="VARCHAR" property="expectedWorkArea" />
+    <result column="expected_place_work" jdbcType="VARCHAR" property="expectedPlaceWork" />
+    <result column="expected_unit_nature" jdbcType="VARCHAR" property="expectedUnitNature" />
+    <result column="graduate_expected_salary" jdbcType="DECIMAL" property="graduateExpectedSalary" />
+    <result column="w_entry_higher_school" jdbcType="VARCHAR" property="wEntryHigherSchool" />
+    <result column="work_professional_relevance" jdbcType="VARCHAR" property="workProfessionalRelevance" />
+    <result column="instruction_manual" jdbcType="VARCHAR" property="instructionManual" />
+    <result column="statistics_graduatio" jdbcType="VARCHAR" property="statisticsGraduatio" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+  </resultMap>
+</mapper>

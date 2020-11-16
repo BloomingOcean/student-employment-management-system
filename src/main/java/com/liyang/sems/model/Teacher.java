@@ -13,11 +13,12 @@ import javax.persistence.*;
 @ApiModel(value = "教师基础信息表")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "teacher")
 public class Teacher {
 
     @Id
     @Column(name = "teacher_id")
-    @ApiModelProperty(value = "教师号")
+    @ApiModelProperty(value = "教师号(主键)")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer teacherId;
 

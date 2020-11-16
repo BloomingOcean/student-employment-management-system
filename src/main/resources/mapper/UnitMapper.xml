@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.UnitMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.Unit">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="unit_id" jdbcType="INTEGER" property="unitId" />
+    <result column="unit_name" jdbcType="VARCHAR" property="unitName" />
+    <result column="unit_characteristic" jdbcType="VARCHAR" property="unitCharacteristic" />
+    <result column="unit_organization" jdbcType="VARCHAR" property="unitOrganization" />
+    <result column="unit_industry" jdbcType="VARCHAR" property="unitIndustry" />
+    <result column="unit_affiliated_department" jdbcType="VARCHAR" property="unitAffiliatedDepartment" />
+    <result column="unit_postal_code" jdbcType="VARCHAR" property="unitPostalCode" />
+    <result column="unit_area" jdbcType="VARCHAR" property="unitArea" />
+    <result column="unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+    <result column="unit_detailed_address" jdbcType="VARCHAR" property="unitDetailedAddress" />
+    <result column="unit_contact_person_number" jdbcType="VARCHAR" property="unitContactPersonNumber" />
+  </resultMap>
+</mapper>

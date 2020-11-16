@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.PunishMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.Punish">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="punish_id" jdbcType="INTEGER" property="punishId" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="manager_name" jdbcType="VARCHAR" property="managerName" />
+    <result column="reasons" jdbcType="VARCHAR" property="reasons" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+  </resultMap>
+</mapper>

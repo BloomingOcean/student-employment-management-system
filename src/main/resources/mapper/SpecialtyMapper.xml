@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.SpecialtyMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.Specialty">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="specialty_id" jdbcType="INTEGER" property="specialtyId" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="schooling_length" jdbcType="VARCHAR" property="schoolingLength" />
+    <result column="subject_category" jdbcType="VARCHAR" property="subjectCategory" />
+    <result column="professional_name" jdbcType="VARCHAR" property="professionalName" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="in_class" jdbcType="VARCHAR" property="inClass" />
+    <result column="training_method" jdbcType="VARCHAR" property="trainingMethod" />
+    <result column="w_normal_school" jdbcType="VARCHAR" property="wNormalSchool" />
+    <result column="normal_stu_category" jdbcType="VARCHAR" property="normalStuCategory" />
+    <result column="major_foreign_languages" jdbcType="VARCHAR" property="majorForeignLanguages" />
+  </resultMap>
+</mapper>

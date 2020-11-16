@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyang.sems.dao.StudentStatusInfoMapper">
+  <resultMap id="BaseResultMap" type="com.liyang.sems.model.StudentStatusInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="student_status_id" jdbcType="INTEGER" property="studentStatusId" />
+    <result column="student_status_id_bofore" jdbcType="INTEGER" property="studentStatusIdBofore" />
+    <result column="enrollment_time" jdbcType="TIMESTAMP" property="enrollmentTime" />
+    <result column="graduation_time" jdbcType="TIMESTAMP" property="graduationTime" />
+    <result column="difficult_students_category" jdbcType="VARCHAR" property="difficultStudentsCategory" />
+    <result column="birth_place" jdbcType="VARCHAR" property="birthPlace" />
+    <result column="w_student_status" jdbcType="VARCHAR" property="wStudentStatus" />
+    <result column="w_drop_out" jdbcType="VARCHAR" property="wDropOut" />
+    <result column="situation_employed" jdbcType="VARCHAR" property="situationEmployed" />
+    <result column="situation_comprehensive_evaluation" jdbcType="VARCHAR" property="situationComprehensiveEvaluation" />
+    <result column="w_file_transfer" jdbcType="VARCHAR" property="wFileTransfer" />
+    <result column="w_account_transfer" jdbcType="VARCHAR" property="wAccountTransfer" />
+    <result column="before_file_unit" jdbcType="VARCHAR" property="beforeFileUnit" />
+    <result column="specialty_id" jdbcType="INTEGER" property="specialtyId" />
+    <result column="school_id" jdbcType="INTEGER" property="schoolId" />
+  </resultMap>
+</mapper>
