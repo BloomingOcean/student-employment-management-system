@@ -17,41 +17,42 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/studentstatusinfo")
+@CrossOrigin
 @Api(tags = "学生基础信息管理")
 public class StudentStatusInfoController {
     @Resource
     private StudentStatusInfoService studentStatusInfoService;
 
     @ApiOperation(value = "添加")
-    @PostMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody StudentStatusInfo studentStatusInfo) {
         studentStatusInfoService.save(studentStatusInfo);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id删除")
-    @PostMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         studentStatusInfoService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id更新")
-    @PostMapping("/update")
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(StudentStatusInfo studentStatusInfo) {
         studentStatusInfoService.update(studentStatusInfo);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id查询")
-    @PostMapping("/detail")
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         StudentStatusInfo studentStatusInfo = studentStatusInfoService.findById(id);
         return ResultGenerator.genSuccessResult(studentStatusInfo);
     }
 
     @ApiOperation(value = "分页查询")
-    @PostMapping("/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<StudentStatusInfo> list = studentStatusInfoService.findAll();

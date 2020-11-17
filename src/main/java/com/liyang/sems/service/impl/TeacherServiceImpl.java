@@ -1,5 +1,6 @@
 package com.liyang.sems.service.impl;
 
+import com.liyang.sems.dao.StudentMapper;
 import com.liyang.sems.dao.TeacherMapper;
 import com.liyang.sems.model.Teacher;
 import com.liyang.sems.service.TeacherService;
@@ -18,5 +19,4 @@ import javax.annotation.Resource;
 public class TeacherServiceImpl extends AbstractService<Teacher> implements TeacherService {
     @Resource
     private TeacherMapper teacherMapper;
-
 }

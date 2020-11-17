@@ -17,41 +17,42 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/contact")
+@CrossOrigin
 @Api(tags = "学生联系人信息管理")
 public class ContactController {
     @Resource
     private ContactService contactService;
 
     @ApiOperation(value = "添加")
-    @PostMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody Contact contact) {
         contactService.save(contact);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id删除")
-    @PostMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         contactService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id更新")
-    @PostMapping("/update")
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(Contact contact) {
         contactService.update(contact);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id查询")
-    @PostMapping("/detail")
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         Contact contact = contactService.findById(id);
         return ResultGenerator.genSuccessResult(contact);
     }
 
     @ApiOperation(value = "分页查询")
-    @PostMapping("/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<Contact> list = contactService.findAll();

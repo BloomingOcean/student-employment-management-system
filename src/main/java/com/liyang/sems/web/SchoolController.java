@@ -17,41 +17,42 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/school")
+@CrossOrigin
 @Api(tags = "学校信息管理")
 public class SchoolController {
     @Resource
     private SchoolService schoolService;
 
     @ApiOperation(value = "添加")
-    @PostMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody School school) {
         schoolService.save(school);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id删除")
-    @PostMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         schoolService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id更新")
-    @PostMapping("/update")
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(School school) {
         schoolService.update(school);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id查询")
-    @PostMapping("/detail")
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         School school = schoolService.findById(id);
         return ResultGenerator.genSuccessResult(school);
     }
 
     @ApiOperation(value = "分页查询")
-    @PostMapping("/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<School> list = schoolService.findAll();

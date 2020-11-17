@@ -17,41 +17,42 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/specialty")
+@CrossOrigin
 @Api(tags = "专业信息管理")
 public class SpecialtyController {
     @Resource
     private SpecialtyService specialtyService;
 
     @ApiOperation(value = "添加")
-    @PostMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody Specialty specialty) {
         specialtyService.save(specialty);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id删除")
-    @PostMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         specialtyService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id更新")
-    @PostMapping("/update")
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(Specialty specialty) {
         specialtyService.update(specialty);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id查询")
-    @PostMapping("/detail")
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         Specialty specialty = specialtyService.findById(id);
         return ResultGenerator.genSuccessResult(specialty);
     }
 
     @ApiOperation(value = "分页查询")
-    @PostMapping("/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<Specialty> list = specialtyService.findAll();

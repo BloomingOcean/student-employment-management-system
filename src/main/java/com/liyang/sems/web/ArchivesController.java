@@ -17,41 +17,42 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/archives")
+@CrossOrigin
 @Api(tags = "档案信息管理")
 public class ArchivesController {
     @Resource
     private ArchivesService archivesService;
 
     @ApiOperation(value = "添加")
-    @PostMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody Archives archives) {
         archivesService.save(archives);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id删除")
-    @PostMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         archivesService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id更新")
-    @PostMapping("/update")
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(Archives archives) {
         archivesService.update(archives);
         return ResultGenerator.genSuccessResult();
     }
 
     @ApiOperation(value = "根据id查询")
-    @PostMapping("/detail")
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         Archives archives = archivesService.findById(id);
         return ResultGenerator.genSuccessResult(archives);
     }
 
     @ApiOperation(value = "分页查询")
-    @PostMapping("/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<Archives> list = archivesService.findAll();
