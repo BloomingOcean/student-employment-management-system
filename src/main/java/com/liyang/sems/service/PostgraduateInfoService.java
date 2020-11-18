@@ -1,4 +1,6 @@
 package com.liyang.sems.service;
+import com.liyang.sems.core.Result;
+import com.liyang.sems.model.EmploymentSurvey;
 import com.liyang.sems.model.PostgraduateInfo;
 import com.liyang.sems.core.Service;
 
@@ -8,4 +10,9 @@ import com.liyang.sems.core.Service;
  */
 public interface PostgraduateInfoService extends Service<PostgraduateInfo> {
 
+    /**
+     * 通过userId获得用户考研信息
+     * @param stuId
+     */
+    Result getInfoByUserId(Integer stuId);
 }

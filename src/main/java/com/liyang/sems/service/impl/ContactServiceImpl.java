@@ -1,6 +1,9 @@
 package com.liyang.sems.service.impl;
 
+import com.liyang.sems.core.Result;
+import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.dao.ContactMapper;
+import com.liyang.sems.model.Archives;
 import com.liyang.sems.model.Contact;
 import com.liyang.sems.service.ContactService;
 import com.liyang.sems.core.AbstractService;
@@ -19,4 +22,12 @@ public class ContactServiceImpl extends AbstractService<Contact> implements Cont
     @Resource
     private ContactMapper contactMapper;
 
+    /**
+     * 通过userId获得用户联系
+     * @param stuId
+     */
+    public Result getInfoByUserId(Integer stuId){
+        ResultGenerator resultGenerator = new ResultGenerator();
+        return resultGenerator.genSuccessResult(contactMapper.getInfoByUserId(stuId));
+    }
 }

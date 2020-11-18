@@ -83,7 +83,7 @@ public class Student {
     private Integer classBjId;
 
     @Column(name = "course_id")
-    @ApiModelProperty(value = "所在课程ID")
+    @ApiModelProperty(value = "课程ID")
     private Integer courseId;
 
 }

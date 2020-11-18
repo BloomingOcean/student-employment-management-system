@@ -1,6 +1,9 @@
 package com.liyang.sems.service.impl;
 
+import com.liyang.sems.core.Result;
+import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.dao.PunishMapper;
+import com.liyang.sems.model.PostgraduateInfo;
 import com.liyang.sems.model.Punish;
 import com.liyang.sems.service.PunishService;
 import com.liyang.sems.core.AbstractService;
@@ -19,4 +22,15 @@ public class PunishServiceImpl extends AbstractService<Punish> implements Punish
     @Resource
     private PunishMapper punishMapper;
 
+    /**
+     * 通过userId获得用户处罚信息
+     * @param stuId
+     */
+    public Result getInfoByUserId(Integer stuId){
+        System.out.println("sql" + punishMapper.getInfoByUserId(stuId));
+        ResultGenerator resultGenerator = new ResultGenerator();
+        Result result = resultGenerator.genSuccessResult(punishMapper.getInfoByUserId(stuId));
+        System.out.println("result"+result);
+        return result;
+    }
 }

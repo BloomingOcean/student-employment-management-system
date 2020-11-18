@@ -1,6 +1,9 @@
 package com.liyang.sems.service.impl;
 
+import com.liyang.sems.core.Result;
+import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.dao.PostgraduateInfoMapper;
+import com.liyang.sems.model.EmploymentSurvey;
 import com.liyang.sems.model.PostgraduateInfo;
 import com.liyang.sems.service.PostgraduateInfoService;
 import com.liyang.sems.core.AbstractService;
@@ -19,4 +22,12 @@ public class PostgraduateInfoServiceImpl extends AbstractService<PostgraduateInf
     @Resource
     private PostgraduateInfoMapper postgraduateInfoMapper;
 
+    /**
+     * 通过userId获得用户考研信息
+     * @param stuId
+     */
+    public Result getInfoByUserId(Integer stuId){
+        ResultGenerator resultGenerator = new ResultGenerator();
+        return resultGenerator.genSuccessResult(postgraduateInfoMapper.getInfoByUserId(stuId));
+    }
 }

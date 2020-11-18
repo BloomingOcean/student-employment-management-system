@@ -59,4 +59,10 @@ public class PostgraduateInfoController {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+    @ApiOperation(value = "根据用户id获得info")
+    @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
+    public Result getInfoById(Integer stuId) {
+        return postgraduateInfoService.getInfoByUserId(stuId);
+    }
 }

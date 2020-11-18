@@ -1,6 +1,9 @@
 package com.liyang.sems.service.impl;
 
+import com.liyang.sems.core.Result;
+import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.dao.EmploymentSurveyMapper;
+import com.liyang.sems.model.EmploymentInfo;
 import com.liyang.sems.model.EmploymentSurvey;
 import com.liyang.sems.service.EmploymentSurveyService;
 import com.liyang.sems.core.AbstractService;
@@ -19,4 +22,12 @@ public class EmploymentSurveyServiceImpl extends AbstractService<EmploymentSurve
     @Resource
     private EmploymentSurveyMapper employmentSurveyMapper;
 
+    /**
+     * 通过userId获得用户就业意向信息
+     * @param stuId
+     */
+    public Result getInfoByUserId(Integer stuId){
+        ResultGenerator resultGenerator = new ResultGenerator();
+        return resultGenerator.genSuccessResult(employmentSurveyMapper.getInfoByUserId(stuId));
+    }
 }
