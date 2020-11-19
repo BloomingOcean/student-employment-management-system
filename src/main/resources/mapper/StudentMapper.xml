@@ -23,4 +23,9 @@
     <result column="class_bj_id" jdbcType="INTEGER" property="classBjId" />
     <result column="course_id" jdbcType="INTEGER" property="courseId" />
   </resultMap>
+
+  <select id="getClassmate" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM student WHERE class_bj_id=#{classId}
+  </select>
+
 </mapper>

@@ -8,4 +8,6 @@
     <id column="class_id" jdbcType="INTEGER" property="classId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
+
+
 </mapper>

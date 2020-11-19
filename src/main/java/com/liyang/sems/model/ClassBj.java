@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @ApiModel(value = "班级")
@@ -24,5 +25,8 @@ public class ClassBj {
     @Column(name = "name")
     @ApiModelProperty(value = "班级名称")
     private String name;
+
+//    @ApiModelProperty(value = "同一个班级的学生")
+//    private List<Student> students;
 
 }

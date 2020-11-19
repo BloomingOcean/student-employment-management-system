@@ -1,6 +1,7 @@
 package com.liyang.sems.web;
 import com.liyang.sems.core.Result;
 import com.liyang.sems.core.ResultGenerator;
+import com.liyang.sems.model.Student;
 import com.liyang.sems.model.Teacher;
 import com.liyang.sems.service.TeacherService;
 import com.github.pagehelper.PageHelper;

@@ -2,6 +2,7 @@ package com.liyang.sems.web;
 import com.liyang.sems.core.Result;
 import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.model.ClassBj;
+import com.liyang.sems.model.Student;
 import com.liyang.sems.service.ClassService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -58,5 +59,11 @@ public class ClassController {
         List<ClassBj> list = classService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
+    }
+
+    @ApiOperation(value = "获得所有同班同学信息")
+    @RequestMapping(value = "/getclassmate", method = RequestMethod.GET)
+    public List<Student> getClassMate(@RequestParam String className) {
+        return classService.getClassMate(className);
     }
 }
