@@ -26,7 +26,7 @@ public class TeacherController {
 
     @ApiOperation(value = "添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public Result add(Teacher teacher) {
+    public Result add(@RequestBody Teacher teacher) {
         teacherService.save(teacher);
         return ResultGenerator.genSuccessResult();
     }
@@ -59,5 +59,11 @@ public class TeacherController {
         List<Teacher> list = teacherService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
+    }
+
+    @ApiOperation(value = "修改教师密码")
+    @RequestMapping(value = "/changepass", method = RequestMethod.PUT)
+    public Result changePass(@RequestParam("password")String password, @RequestParam("id")Integer id) {
+        return teacherService.changePass(password, id);
     }
 }

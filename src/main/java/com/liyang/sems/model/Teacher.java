@@ -40,7 +40,8 @@ public class Teacher {
 
     @Column(name = "birth_date")
     @ApiModelProperty(value = "出生日期")
-    private Date birthDate;
+    private String birthDate;
+//    private Date birthDate;
 
     @Column(name = "political_status")
     @ApiModelProperty(value = "政治面貌")

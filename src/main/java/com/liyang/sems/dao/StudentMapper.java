@@ -48,4 +48,13 @@ public interface StudentMapper extends Mapper<Student> {
 //    @Select("SELECT * FROM student " +
 //            "WHERE class_bj_id=#{classId}")
     List<Student> getClassmate(@Param("classId") Integer classId);
+
+    /**
+     * 修改学生密码
+     * @param pass 新密码
+     * @param stuId 学生id
+     * @return 是否成功
+     */
+    @Update("UPDATE student SET `password` = #{pass} WHERE stu_id = #{id};")
+    Boolean changePass(@Param("pass") String pass, @Param("id") Integer stuId);
 }

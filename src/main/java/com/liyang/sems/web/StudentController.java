@@ -61,4 +61,9 @@ public class StudentController {
         return ResultGenerator.genSuccessResult(pageInfo);
     }
 
+    @ApiOperation(value = "修改学生密码")
+    @RequestMapping(value = "/changepass", method = RequestMethod.PUT)
+    public Result changePass(@RequestParam("password")String password, @RequestParam("id")Integer id) {
+        return studentService.changePass(password, id);
+    }
 }

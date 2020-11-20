@@ -1,5 +1,6 @@
 package com.liyang.sems.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -26,9 +27,11 @@ public class EmploymentInfo {
     @ApiModelProperty(value = "单位id")
     private Integer unitId;
 
+//    @JSONField(format = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     @Column(name = "dispatch_time")
     @ApiModelProperty(value = "派遣时间")
-    private Date dispatchTime;
+    private String dispatchTime;
+//    private Date dispatchTime;
 
     @Column(name = "dispatch_registration_card_number")
     @ApiModelProperty(value = "派遣报到证号")
@@ -58,9 +61,11 @@ public class EmploymentInfo {
     @ApiModelProperty(value = "档案转寄地址")
     private String fileForwardingAddress;
 
+//    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "entry_date")
     @ApiModelProperty(value = "录入日期")
-    private Date entryDate;
+    private String entryDate;
+//    private Date entryDate;
 
     @Column(name = "graduate_whereabouts")
     @ApiModelProperty(value = "毕业去向")
