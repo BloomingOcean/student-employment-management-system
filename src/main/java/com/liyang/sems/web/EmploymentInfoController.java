@@ -65,4 +65,11 @@ public class EmploymentInfoController {
     public Result getInfoById(Integer stuId) {
         return employmentInfoService.getInfoByUserId(stuId);
     }
+
+    @ApiOperation(value = "就业信息-获取已就业人数和未就业人数")
+    @RequestMapping(value = "/getemploymentnumber", method = RequestMethod.GET)
+    public Result getEmploymentNumber() {
+        return employmentInfoService.getEmploymentNumber();
+    }
+
 }

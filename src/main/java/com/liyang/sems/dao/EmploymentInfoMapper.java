@@ -42,4 +42,30 @@ public interface EmploymentInfoMapper extends Mapper<EmploymentInfo> {
     @Select("SELECT * from employment_info " +
             "WHERE stu_id=#{stuId};")
     EmploymentInfo getInfoByUserId(@Param("stuId") Integer stuId);
+
+    /**
+     * 获取已就业人数
+     * @return 已就业人数
+     */
+    @Select("SELECT COUNT(*) FROM student s, employment_info e " +
+            "WHERE s.stu_id=e.stu_id " +
+            "AND w_employment='1'")
+    Integer getUnemploymentNumber();
+
+    /**
+     * 获取未就业人数
+     * @return 未就业人数
+     */
+    @Select("SELECT COUNT(*) FROM student s, employment_info e " +
+            "WHERE s.stu_id=e.stu_id " +
+            "AND w_employment='0'")
+    Integer getEmploymentNumber();
+
+    /**
+     * 获得就业人数
+     * @return 就业人数
+     */
+    @Select("select COUNT(*) FROM employment_info e,student s " +
+            "WHERE e.stu_id=s.stu_id;")
+    Integer getEmploymentAllNumber();
 }

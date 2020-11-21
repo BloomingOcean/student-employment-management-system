@@ -2,11 +2,14 @@ package com.liyang.sems.dao;
 
 import com.liyang.sems.core.Mapper;
 import com.liyang.sems.model.EmploymentSurvey;
+import com.liyang.sems.model.EmploymentUnit;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.type.JdbcType;
+
+import java.util.List;
 
 @org.apache.ibatis.annotations.Mapper
 public interface EmploymentSurveyMapper extends Mapper<EmploymentSurvey> {
@@ -31,4 +34,5 @@ public interface EmploymentSurveyMapper extends Mapper<EmploymentSurvey> {
     @Select("SELECT * from employment_survey " +
             "WHERE stu_id=#{stuId};")
     EmploymentSurvey getInfoByUserId(@Param("stuId") Integer stuId);
+
 }

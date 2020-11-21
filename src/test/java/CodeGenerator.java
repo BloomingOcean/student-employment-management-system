@@ -23,22 +23,27 @@ public class CodeGenerator {
     private static final String JDBC_PASSWORD = "root";
     private static final String JDBC_DIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
-    private static final String PROJECT_PATH = System.getProperty("user.dir");//项目在硬盘上的基础路径
-    private static final String TEMPLATE_FILE_PATH = PROJECT_PATH + "/src/test/resources/generator/template";//模板位置
+    //项目在硬盘上的基础路径
+    private static final String PROJECT_PATH = System.getProperty("user.dir");
+    //模板位置
+    private static final String TEMPLATE_FILE_PATH = PROJECT_PATH + "/src/test/resources/generator/template";
 
     private static final String JAVA_PATH = "/src/main/java"; //java文件路径
     private static final String RESOURCES_PATH = "/src/main/resources";//资源文件路径
 
-    private static final String PACKAGE_PATH_SERVICE = packageConvertPath(SERVICE_PACKAGE);//生成的Service存放路径
-    private static final String PACKAGE_PATH_SERVICE_IMPL = packageConvertPath(SERVICE_IMPL_PACKAGE);//生成的Service实现存放路径
-    private static final String PACKAGE_PATH_CONTROLLER = packageConvertPath(CONTROLLER_PACKAGE);//生成的Controller存放路径
+    //生成的Service存放路径
+    private static final String PACKAGE_PATH_SERVICE = packageConvertPath(SERVICE_PACKAGE);
+    //生成的Service实现存放路径
+    private static final String PACKAGE_PATH_SERVICE_IMPL = packageConvertPath(SERVICE_IMPL_PACKAGE);
+    //生成的Controller存放路径
+    private static final String PACKAGE_PATH_CONTROLLER = packageConvertPath(CONTROLLER_PACKAGE);
 
     private static final String AUTHOR = "LiYang";//@author
     private static final String DATE = new SimpleDateFormat("yyyy/MM/dd").format(new Date());//@date
 
     public static void main(String[] args) {
         genCode("class");
-        //genCodeByCustomModelName("输入表名","输入自定义Model名称");
+//        genCodeByCustomModelName("输入表名","输入自定义Model名称");
     }
 
     /**
@@ -65,6 +70,11 @@ public class CodeGenerator {
     }
 
 
+    /**
+     * 通过数据表名称，和自定义的modelName构建Model和Mapper
+     * @param tableName 数据表名称
+     * @param modelName 自定义的 Model 名称
+     */
     public static void genModelAndMapper(String tableName, String modelName) {
         Context context = new Context(ModelType.FLAT);
         context.setId("Potato");
@@ -131,6 +141,11 @@ public class CodeGenerator {
         System.out.println(modelName + "Mapper.xml 生成成功");
     }
 
+    /**
+     * 通过数据表名称，和自定义的modelName构建Service
+     * @param tableName 数据表名称
+     * @param modelName 自定义的 Model 名称
+     */
     public static void genService(String tableName, String modelName) {
         try {
             freemarker.template.Configuration cfg = getConfiguration();
@@ -163,6 +178,11 @@ public class CodeGenerator {
         }
     }
 
+    /**
+     * 通过数据表名称，和自定义的modelName构建Controller
+     * @param tableName 数据表名称
+     * @param modelName 自定义的 Model 名称
+     */
     public static void genController(String tableName, String modelName) {
         try {
             freemarker.template.Configuration cfg = getConfiguration();
@@ -187,7 +207,6 @@ public class CodeGenerator {
         } catch (Exception e) {
             throw new RuntimeException("生成Controller失败", e);
         }
-
     }
 
     private static freemarker.template.Configuration getConfiguration() throws IOException {
@@ -204,7 +223,6 @@ public class CodeGenerator {
 
     private static String tableNameConvertUpperCamel(String tableName) {
         return CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, tableName.toLowerCase());
-
     }
 
     private static String tableNameConvertMappingPath(String tableName) {

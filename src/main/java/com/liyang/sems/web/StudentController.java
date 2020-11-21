@@ -66,4 +66,23 @@ public class StudentController {
     public Result changePass(@RequestParam("password")String password, @RequestParam("id")Integer id) {
         return studentService.changePass(password, id);
     }
+
+    @ApiOperation(value = "学生信息-获取学生性别数量")
+    @RequestMapping(value = "/getclassgenger", method = RequestMethod.GET)
+    public Result getClassGenger() {
+        return studentService.getClassGenger();
+    }
+
+    @ApiOperation(value = "学生信息-获取学生薪资水平分布")
+    @RequestMapping(value = "/getexceptsalary", method = RequestMethod.GET)
+    public Result getExpectedSalary() {
+        return studentService.getExpectedSalary();
+    }
+
+    @ApiOperation(value = "学生信息-获得考研就业人数")
+    @RequestMapping(value = "/getpostemplnumber", method = RequestMethod.GET)
+    public Result getPostEmplNumber() {
+        return studentService.getPostEmplNumber();
+    }
+
 }

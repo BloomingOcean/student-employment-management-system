@@ -7,10 +7,13 @@ import com.liyang.sems.model.Contact;
 import com.liyang.sems.model.EmploymentInfo;
 import com.liyang.sems.service.EmploymentInfoService;
 import com.liyang.sems.core.AbstractService;
+import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 
 /**
@@ -29,5 +32,18 @@ public class EmploymentInfoServiceImpl extends AbstractService<EmploymentInfo> i
     public Result getInfoByUserId(Integer stuId){
         ResultGenerator resultGenerator = new ResultGenerator();
         return resultGenerator.genSuccessResult(employmentInfoMapper.getInfoByUserId(stuId));
+    }
+
+    /**
+     * 获取未就业人数和已就业人数
+     * @return 已就业人数
+     */
+    public Result getEmploymentNumber(){
+        ResultGenerator generator = new ResultGenerator();
+        HashMap hashMap = new HashMap();
+        hashMap.put("unemploymentNumber",employmentInfoMapper.getUnemploymentNumber());
+        hashMap.put("employmentNumber",employmentInfoMapper.getEmploymentNumber());
+        Result result = generator.genSuccessResult(hashMap);
+        return result;
     }
 }

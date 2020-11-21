@@ -20,4 +20,22 @@ public interface StudentService extends Service<Student> {
     List<Student> getClassmate(Integer classId);
 
     Result changePass(@Param("pass") String pass, @Param("id") Integer stuId);
+
+    /**
+     * 获取学生中男女生数量
+     * @return 男女生数量
+     */
+    Result getClassGenger();
+
+    /**
+     * 获取各个期望薪资水平的人数
+     * @return 各个水平的人数
+     */
+    Result getExpectedSalary();
+
+    /**
+     * 获得考研、就业人数
+     * @return 考研、就业人数
+     */
+    Result getPostEmplNumber();
 }

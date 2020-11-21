@@ -34,4 +34,11 @@ public interface PostgraduateInfoMapper extends Mapper<PostgraduateInfo> {
     @Select("SELECT * from postgraduate_info " +
             "WHERE stu_id=#{stuId};")
     PostgraduateInfo getInfoByUserId(@Param("stuId") Integer stuId);
+
+    /**
+     * 获得考研人数
+     */
+    @Select("select COUNT(*) FROM postgraduate_info p,student s " +
+            "WHERE p.stu_id=s.stu_id;")
+    Integer getPostgraduateAllNumber();
 }

@@ -59,4 +59,11 @@ public class StudentStatusInfoController {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+    @ApiOperation(value = "学生信息-获得学生省份分布人数")
+    @RequestMapping(value = "/getprovinceinfo", method = RequestMethod.GET)
+    public Result getProvinceInfo() {
+        return studentStatusInfoService.getProvinceInfo();
+    }
+
 }

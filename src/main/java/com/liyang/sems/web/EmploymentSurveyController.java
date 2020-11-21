@@ -65,4 +65,5 @@ public class EmploymentSurveyController {
     public Result getInfoById(Integer stuId) {
         return employmentSurveyService.getInfoByUserId(stuId);
     }
+
 }

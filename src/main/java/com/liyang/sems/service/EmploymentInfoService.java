@@ -15,4 +15,10 @@ public interface EmploymentInfoService extends Service<EmploymentInfo> {
      * @param stuId
      */
     Result getInfoByUserId(Integer stuId);
+
+    /**
+     * 获取已就业人数和未就业人数
+     * @return 已就业人数
+     */
+    Result getEmploymentNumber();
 }

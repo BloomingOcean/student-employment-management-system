@@ -24,10 +24,12 @@ public class PostgraduateInfoServiceImpl extends AbstractService<PostgraduateInf
 
     /**
      * 通过userId获得用户考研信息
-     * @param stuId
+     * @param stuId 用户id
      */
-    public Result getInfoByUserId(Integer stuId){
+    public Result getInfoByUserId(Integer stuId) {
         ResultGenerator resultGenerator = new ResultGenerator();
         return resultGenerator.genSuccessResult(postgraduateInfoMapper.getInfoByUserId(stuId));
     }
+
+
 }

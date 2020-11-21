@@ -15,4 +15,5 @@ public interface EmploymentSurveyService extends Service<EmploymentSurvey> {
      * @param stuId
      */
     Result getInfoByUserId(Integer stuId);
+
 }

@@ -1,6 +1,7 @@
 package com.liyang.sems.dao;
 
 import com.liyang.sems.core.Mapper;
+import com.liyang.sems.model.Province;
 import com.liyang.sems.model.Student;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
@@ -58,4 +59,36 @@ public interface StudentMapper extends Mapper<Student> {
      */
     @Update("UPDATE student SET `password` = #{pass} WHERE stu_id = #{id};")
     Boolean changePass(@Param("pass") String pass, @Param("id") Integer stuId);
+
+    /**
+     * 学生中女生数量
+     * @return 女生数量
+     */
+    @Select("SELECT COUNT(*) FROM student " +
+            "WHERE gender='女'")
+    Integer girlNumber();
+
+    /**
+     * 学生中男生数量
+     * @return 男生数量
+     */
+    @Select("SELECT COUNT(*) FROM student " +
+            "WHERE gender='男'")
+    Integer boyNumber();
+
+    /**
+     * 获取各个期望薪资水平的人数
+     * @return 各个水平的人数
+     */
+    @Select("select COUNT(*) from employment_survey where graduate_expected_salary between 0000 and 4000;")
+    Integer getExpectedSalary0_4();
+    @Select("select COUNT(*) from employment_survey where graduate_expected_salary between 4000 and 8000;")
+    Integer getExpectedSalary4_8();
+    @Select("select COUNT(*) from employment_survey where graduate_expected_salary between 8000 and 12000;")
+    Integer getExpectedSalary8_12();
+    @Select("select COUNT(*) from employment_survey where graduate_expected_salary between 12000 and 16000;")
+    Integer getExpectedSalary12_16();
+    @Select("select COUNT(*) from employment_survey where graduate_expected_salary between 16000 and 20000;")
+    Integer getExpectedSalary16_20();
+
 }

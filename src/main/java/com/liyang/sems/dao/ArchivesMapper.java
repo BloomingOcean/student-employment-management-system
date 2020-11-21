@@ -2,16 +2,13 @@ package com.liyang.sems.dao;
 
 import com.liyang.sems.core.Mapper;
 import com.liyang.sems.model.Archives;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 
 @org.apache.ibatis.annotations.Mapper
 public interface ArchivesMapper extends Mapper<Archives> {
 
-    @Results({
+    @Results(id = "archives" , value = {
             @Result(column="archives_relationship_id", property="archivesRelationshipId", jdbcType = JdbcType.INTEGER),
             @Result(column="agent_type", property="agentType", jdbcType = JdbcType.VARCHAR),
             @Result(column="w_organizational_relationship", property="wOrganizationalRelationship", jdbcType = JdbcType.VARCHAR),

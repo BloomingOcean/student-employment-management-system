@@ -15,4 +15,5 @@ public interface PostgraduateInfoService extends Service<PostgraduateInfo> {
      * @param stuId
      */
     Result getInfoByUserId(Integer stuId);
+
 }
