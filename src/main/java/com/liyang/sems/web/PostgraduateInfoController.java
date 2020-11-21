@@ -23,35 +23,35 @@ public class PostgraduateInfoController {
     @Resource
     private PostgraduateInfoService postgraduateInfoService;
 
-    @ApiOperation(value = "添加")
+    @ApiOperation(value = "考研信息-添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody PostgraduateInfo postgraduateInfo) {
         postgraduateInfoService.save(postgraduateInfo);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id删除")
+    @ApiOperation(value = "考研信息-根据id删除")
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         postgraduateInfoService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id更新")
+    @ApiOperation(value = "考研信息-根据id更新")
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(PostgraduateInfo postgraduateInfo) {
         postgraduateInfoService.update(postgraduateInfo);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id查询")
+    @ApiOperation(value = "考研信息-根据id查询")
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         PostgraduateInfo postgraduateInfo = postgraduateInfoService.findById(id);
         return ResultGenerator.genSuccessResult(postgraduateInfo);
     }
 
-    @ApiOperation(value = "分页查询")
+    @ApiOperation(value = "考研信息-分页查询")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
@@ -60,7 +60,7 @@ public class PostgraduateInfoController {
         return ResultGenerator.genSuccessResult(pageInfo);
     }
 
-    @ApiOperation(value = "根据用户id获得info")
+    @ApiOperation(value = "考研信息-根据用户id获得info")
     @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
     public Result getInfoById(Integer stuId) {
         return postgraduateInfoService.getInfoByUserId(stuId);

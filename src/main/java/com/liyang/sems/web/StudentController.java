@@ -24,35 +24,35 @@ public class StudentController {
     @Resource
     private StudentService studentService;
 
-    @ApiOperation(value = "添加")
+    @ApiOperation(value = "学生信息-添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody Student student) {
         studentService.save(student);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id删除")
+    @ApiOperation(value = "学生信息-根据id删除")
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         studentService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id更新")
+    @ApiOperation(value = "学生信息-根据id更新")
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(Student student) {
         studentService.update(student);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id查询")
+    @ApiOperation(value = "学生信息-根据id查询")
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         Student student = studentService.findById(id);
         return ResultGenerator.genSuccessResult(student);
     }
 
-    @ApiOperation(value = "分页查询")
+    @ApiOperation(value = "学生信息-分页查询")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
@@ -61,7 +61,7 @@ public class StudentController {
         return ResultGenerator.genSuccessResult(pageInfo);
     }
 
-    @ApiOperation(value = "修改学生密码")
+    @ApiOperation(value = "学生信息-修改学生密码")
     @RequestMapping(value = "/changepass", method = RequestMethod.PUT)
     public Result changePass(@RequestParam("password")String password, @RequestParam("id")Integer id) {
         return studentService.changePass(password, id);

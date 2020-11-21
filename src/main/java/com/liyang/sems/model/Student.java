@@ -36,7 +36,8 @@ public class Student {
 
     @Column(name = "birthday")
     @ApiModelProperty(value = "生日")
-    private Date birthday;
+    private String birthday;
+//    private Date birthday;
 
     @Column(name = "political_status")
     @ApiModelProperty(value = "政治面貌")

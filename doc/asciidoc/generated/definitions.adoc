@@ -1,0 +1,645 @@
+
+[[_definitions]]
+== 定义
+
+[[_modelandview]]
+=== ModelAndView
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**empty** +
+__可选__|**样例** : `true`|boolean
+|**model** +
+__可选__|**样例** : `"object"`|object
+|**modelMap** +
+__可选__|**样例** : `{
+  "string" : "object"
+}`|< string, object > map
+|**reference** +
+__可选__|**样例** : `true`|boolean
+|**status** +
+__可选__|**样例** : `"string"`|enum (100, 101, 102, 103, 200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 307, 308, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511)
+|**view** +
+__可选__|**样例** : `"<<_view>>"`|<<_view,View>>
+|**viewName** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_result]]
+=== Result
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : `"object"`|object
+|**message** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_view]]
+=== View
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**contentType** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_a7ad35acaea5046dd8a61010c6d30111]]
+=== 专业
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**department** +
+__可选__|所在院系 +
+**样例** : `"string"`|string
+|**education** +
+__可选__|学历 +
+**样例** : `"string"`|string
+|**inClass** +
+__可选__|所在班级 +
+**样例** : `"string"`|string
+|**majorForeignLanguages** +
+__可选__|主修外语语种 +
+**样例** : `"string"`|string
+|**normalStuCategory** +
+__可选__|师范生类别 +
+**样例** : `"string"`|string
+|**professionalName** +
+__可选__|专业名称 +
+**样例** : `"string"`|string
+|**schoolingLength** +
+__可选__|学制 +
+**样例** : `"string"`|string
+|**specialtyId** +
+__可选__|专业信息ID(主键) +
+**样例** : `0`|integer (int32)
+|**subjectCategory** +
+__可选__|学科门类 +
+**样例** : `"string"`|string
+|**trainingMethod** +
+__可选__|培养方式 +
+**样例** : `"string"`|string
+|**wnormalSchool** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_f2996845b6bf0a07fe26f74f35e42ebe]]
+=== 单位
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**unitAffiliatedDepartment** +
+__可选__|单位隶属部门 +
+**样例** : `"string"`|string
+|**unitArea** +
+__可选__|单位所在地区 +
+**样例** : `"string"`|string
+|**unitCharacteristic** +
+__可选__|单位性质 +
+**样例** : `"string"`|string
+|**unitContactPerson** +
+__可选__|单位联系人 +
+**样例** : `"string"`|string
+|**unitContactPersonNumber** +
+__可选__|联系人电话号码 +
+**样例** : `"string"`|string
+|**unitDetailedAddress** +
+__可选__|单位具体地址 +
+**样例** : `"string"`|string
+|**unitId** +
+__可选__|单位id(主键) +
+**样例** : `0`|integer (int32)
+|**unitIndustry** +
+__可选__|单位行业 +
+**样例** : `"string"`|string
+|**unitName** +
+__可选__|单位名称 +
+**样例** : `"string"`|string
+|**unitOrganization** +
+__可选__|单位组织机构 +
+**样例** : `"string"`|string
+|**unitPostalCode** +
+__可选__|单位邮编 +
+**样例** : `"string"`|string
+|===
+
+
+[[_d99040566fa44fa402b1f5b049a85e56]]
+=== 处分
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**date** +
+__可选__|处分日期 +
+**样例** : `"string"`|string (date-time)
+|**level** +
+__可选__|处分等级 +
+**样例** : `"string"`|string
+|**managerName** +
+__可选__|经办人姓名 +
+**样例** : `"string"`|string
+|**name** +
+__可选__|处分名称 +
+**样例** : `"string"`|string
+|**punishId** +
+__可选__|处分id(主键) +
+**样例** : `0`|integer (int32)
+|**reasons** +
+__可选__|处分理由 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学生id +
+**样例** : `0`|integer (int32)
+|===
+
+
+[[_413b738061f6a5148fa3704c5c5bdca9]]
+=== 学校
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**branchSchoolName** +
+__可选__|分校名称 +
+**样例** : `"string"`|string
+|**campus** +
+__可选__|所在校区 +
+**样例** : `"string"`|string
+|**departmentCode** +
+__可选__|院校隶属部门代码 +
+**样例** : `"string"`|string
+|**locationCode** +
+__可选__|院校所在地代码 +
+**样例** : `"string"`|string
+|**provinceCode** +
+__可选__|院校所在省份代码 +
+**样例** : `"string"`|string
+|**schoolCode** +
+__可选__|院校代码 +
+**样例** : `"string"`|string
+|**schoolId** +
+__可选__|学校id(主键) +
+**样例** : `0`|integer (int32)
+|**schoolName** +
+__可选__|院校名称 +
+**样例** : `"string"`|string
+|===
+
+
+[[_c8514ac456bcff7fed29efa04a8c72a5]]
+=== 学生基础信息表
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**birthday** +
+__可选__|生日 +
+**样例** : `"string"`|string
+|**classBjId** +
+__可选__|所在班级ID +
+**样例** : `0`|integer (int32)
+|**counselorId** +
+__可选__|辅导员id +
+**样例** : `0`|integer (int32)
+|**courseId** +
+__可选__|课程ID +
+**样例** : `0`|integer (int32)
+|**email** +
+__可选__|电子邮件 +
+**样例** : `"string"`|string
+|**gender** +
+__可选__|性别 +
+**样例** : `"string"`|string
+|**hukouId** +
+__可选__|户口id +
+**样例** : `0`|integer (int32)
+|**idNumber** +
+__可选__|身份证号 +
+**样例** : `"string"`|string
+|**name** +
+__可选__|名字 +
+**样例** : `"string"`|string
+|**nation** +
+__可选__|民族 +
+**样例** : `"string"`|string
+|**onlyChild** +
+__可选__|独生子女 +
+**样例** : `"string"`|string
+|**password** +
+__可选__|密码 +
+**样例** : `"string"`|string
+|**phoneNumber** +
+__可选__|电话号码 +
+**样例** : `"string"`|string
+|**politicalStatus** +
+__可选__|政治面貌 +
+**样例** : `"string"`|string
+|**qqNumber** +
+__可选__|qq号码 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学号(主键) +
+**样例** : `0`|integer (int32)
+|**studentStatusId** +
+__可选__|学籍信息id +
+**样例** : `0`|integer (int32)
+|===
+
+
+[[_242fb0c3da9419304213ea5fc766be43]]
+=== 就业信息
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**conscriptSoldiers** +
+__可选__|应征义务兵 +
+**样例** : `"string"`|string
+|**dispatchRegistrationCardNumber** +
+__可选__|派遣报到证号 +
+**样例** : `"string"`|string
+|**dispatchTime** +
+__可选__|派遣时间 +
+**样例** : `"string"`|string
+|**employmentInfoId** +
+__可选__|就业信息id(主键) +
+**样例** : `0`|integer (int32)
+|**entryDate** +
+__可选__|录入日期 +
+**样例** : `"string"`|string
+|**fileForwardingAddress** +
+__可选__|档案转寄地址 +
+**样例** : `"string"`|string
+|**fileForwardingUnit** +
+__可选__|档案转寄单位 +
+**样例** : `"string"`|string
+|**fileForwardingUnitPostcode** +
+__可选__|档案转寄单位邮编 +
+**样例** : `"string"`|string
+|**graduateWhereabouts** +
+__可选__|毕业去向 +
+**样例** : `"string"`|string
+|**jobSatisfaction** +
+__可选__|就业满意度 +
+**样例** : `"string"`|string
+|**occupationalCategory** +
+__可选__|职业类别 +
+**样例** : `"string"`|string
+|**otherInfo** +
+__可选__|其它信息 +
+**样例** : `"string"`|string
+|**registrationCertificateIssuanceCategory** +
+__可选__|报到证件签发类别 +
+**样例** : `"string"`|string
+|**relocationUnitName** +
+__可选__|报到证迁往单位名称 +
+**样例** : `"string"`|string
+|**signedUnitLocation** +
+__可选__|签往单位所在地 +
+**样例** : `"string"`|string
+|**specialInstructions** +
+__可选__|特殊说明 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学生id +
+**样例** : `0`|integer (int32)
+|**unitId** +
+__可选__|单位id +
+**样例** : `0`|integer (int32)
+|**wemployment** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_5ec03e1f732974b19d6f0b45b085b4ba]]
+=== 就业调查
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**employmentSurveyId** +
+__可选__|就业调查id(主键) +
+**样例** : `0`|integer (int32)
+|**expectedPlaceWork** +
+__可选__|期望工作地点 +
+**样例** : `"string"`|string
+|**expectedUnitNature** +
+__可选__|期望单位性质 +
+**样例** : `"string"`|string
+|**expectedWorkArea** +
+__可选__|期望工作地域 +
+**样例** : `"string"`|string
+|**graduateExpectedSalary** +
+__可选__|毕业期望薪酬 +
+**样例** : `0.0`|number
+|**instructionManual** +
+__可选__|备注说明 +
+**样例** : `"string"`|string
+|**statisticsGraduatio** +
+__可选__|毕业去向情况统计 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学生id +
+**样例** : `0`|integer (int32)
+|**wentryHigherSchool** +
+__可选__|**样例** : `"string"`|string
+|**workProfessionalRelevance** +
+__可选__|工作与专业相关度 +
+**样例** : `"string"`|string
+|===
+
+
+[[_dc7f2233142f9fdc9e2c69e5b1ee0107]]
+=== 户口
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**codeNumber** +
+__可选__|代码编号 +
+**样例** : `"string"`|string
+|**familyAddress** +
+__可选__|家庭地址 +
+**样例** : `"string"`|string
+|**hukouId** +
+__可选__|户口信息id(主键) +
+**样例** : `0`|integer (int32)
+|**policeStationAddress** +
+__可选__|派出所地址 +
+**样例** : `"string"`|string
+|**postalCode** +
+__可选__|邮政编码 +
+**样例** : `"string"`|string
+|**povertyLevel** +
+__可选__|贫困等级 +
+**样例** : `"string"`|string
+|===
+
+
+[[_6881a6659c578e2dd0659c2035e0e424]]
+=== 教师基础信息表
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**address** +
+__可选__|家庭地址 +
+**样例** : `"string"`|string
+|**birthDate** +
+__可选__|出生日期 +
+**样例** : `"string"`|string
+|**courseId** +
+__可选__|课程id +
+**样例** : `0`|integer (int32)
+|**email** +
+__可选__|电子邮箱 +
+**样例** : `"string"`|string
+|**gender** +
+__可选__|教师性别 +
+**样例** : `"string"`|string
+|**idNumber** +
+__可选__|身份证号 +
+**样例** : `"string"`|string
+|**jobNumber** +
+__可选__|教师工号 +
+**样例** : `0`|integer (int32)
+|**name** +
+__可选__|教师姓名 +
+**样例** : `"string"`|string
+|**nation** +
+__可选__|民族 +
+**样例** : `"string"`|string
+|**password** +
+__可选__|老师密码 +
+**样例** : `"string"`|string
+|**phoneNumber** +
+__可选__|手机号码 +
+**样例** : `"string"`|string
+|**politicalStatus** +
+__可选__|政治面貌 +
+**样例** : `"string"`|string
+|**qqNumber** +
+__可选__|QQ号码 +
+**样例** : `"string"`|string
+|**teacherGrade** +
+__可选__|教师等级 +
+**样例** : `"string"`|string
+|**teacherId** +
+__可选__|教师号(主键) +
+**样例** : `0`|integer (int32)
+|===
+
+
+[[_20211b40d8451cb6cd05258d1453f78f]]
+=== 档案
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**agentType** +
+__可选__|代理类型 +
+**样例** : `"string"`|string
+|**archivesRelationshipId** +
+__可选__|档案关系id(主键) +
+**样例** : `0`|integer (int32)
+|**flexibleContractSign** +
+__可选__|灵活合同标志 +
+**样例** : `"string"`|string
+|**flexibleContractUnitName** +
+__可选__|灵活合同单位名称 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学生id +
+**样例** : `0`|integer (int32)
+|**talentAgencyLogo** +
+__可选__|人才代理标志 +
+**样例** : `"string"`|string
+|**worganizationalRelationship** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_8ac67c8074f3d3cb29709c3aeb7391c5]]
+=== 班级
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**classId** +
+__可选__|班级id(主键) +
+**样例** : `0`|integer (int32)
+|**name** +
+__可选__|班级名称 +
+**样例** : `"string"`|string
+|===
+
+
+[[_2bd10fbdd269dcd4b434fdb132e96c62]]
+=== 考生表
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**beforeFileUnit** +
+__可选__|入学前档案所在单位 +
+**样例** : `"string"`|string
+|**birthPlace** +
+__可选__|生源所在地 +
+**样例** : `"string"`|string
+|**difficultStudentsCategory** +
+__可选__|困难生类别 +
+**样例** : `"string"`|string
+|**enrollmentTime** +
+__可选__|入校时间 +
+**样例** : `"string"`|string
+|**graduationTime** +
+__可选__|毕业时间 +
+**样例** : `"string"`|string
+|**schoolId** +
+__可选__|学校id +
+**样例** : `0`|integer (int32)
+|**situationComprehensiveEvaluation** +
+__可选__|综合评测情况 +
+**样例** : `"string"`|string
+|**situationEmployed** +
+__可选__|在校任职情况 +
+**样例** : `"string"`|string
+|**specialtyId** +
+__可选__|专业id +
+**样例** : `0`|integer (int32)
+|**studentStatusId** +
+__可选__|考生号码(主键) +
+**样例** : `0`|integer (int32)
+|**studentStatusIdBofore** +
+__可选__|原考生号 +
+**样例** : `0`|integer (int32)
+|**waccountTransfer** +
+__可选__|**样例** : `"string"`|string
+|**wdropOut** +
+__可选__|**样例** : `"string"`|string
+|**wfileTransfer** +
+__可选__|**样例** : `"string"`|string
+|**wstudentStatus** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_60ecb8ff34649c9043ede22c9f5b7f2a]]
+=== 考研信息
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**forwardingCollegeFiles** +
+__可选__|升学档案转寄 +
+**样例** : `"string"`|string
+|**locationAdmissionInstitution** +
+__可选__|录取院校所在地 +
+**样例** : `"string"`|string
+|**matchMajor** +
+__可选__|专业对口 +
+**样例** : `"string"`|string
+|**orientationCommissioningUnit** +
+__可选__|定向或委培单位 +
+**样例** : `"string"`|string
+|**postgraduateInfoId** +
+__可选__|考研信息ID(主键) +
+**样例** : `0`|integer (int32)
+|**proceedCollege** +
+__可选__|升学院校 +
+**样例** : `"string"`|string
+|**recipientPhoneNumber** +
+__可选__|接收人联系电话 +
+**样例** : `"string"`|string
+|**recipientProgressionFile** +
+__可选__|升学档案接收人 +
+**样例** : `"string"`|string
+|**reportCardNumber** +
+__可选__|报道证编号 +
+**样例** : `"string"`|string
+|**schoolPostcode** +
+__可选__|升学院校邮编 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学生id +
+**样例** : `0`|integer (int32)
+|**wexemptGraduateStudents** +
+__可选__|**样例** : `"string"`|string
+|**wfulltimePostgraduate** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_b5894313c2d9cc88561f8cdc7071f9f5]]
+=== 联系方式
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**contactId** +
+__可选__|联系方式id(主键) +
+**样例** : `0`|integer (int32)
+|**name** +
+__可选__|姓名 +
+**样例** : `"string"`|string
+|**phoneNumber** +
+__可选__|电话号码 +
+**样例** : `0`|integer (int32)
+|**relationship** +
+__可选__|关系 +
+**样例** : `"string"`|string
+|**stuId** +
+__可选__|学生id +
+**样例** : `0`|integer (int32)
+|===
+
+
+[[_58983b0dbd37e844a2fbd6094f31a2e0]]
+=== 课程
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**courseId** +
+__可选__|班级id(主键) +
+**样例** : `0`|integer (int32)
+|**name** +
+__可选__|课程名称 +
+**样例** : `"string"`|string
+|**wprofessionalCourse** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_7e7ce92ead0fa54bf9116163a46cec8a]]
+=== 辅导员
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**counselorId** +
+__可选__|辅导员id(主键) +
+**样例** : `0`|integer (int32)
+|**name** +
+__可选__|辅导员姓名 +
+**样例** : `"string"`|string
+|**phoneNumber** +
+__可选__|电话 +
+**样例** : `0`|integer (int32)
+|===
+
+
+

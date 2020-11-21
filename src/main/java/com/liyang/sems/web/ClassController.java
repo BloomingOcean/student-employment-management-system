@@ -24,35 +24,35 @@ public class ClassController {
     @Resource
     private ClassService classService;
 
-    @ApiOperation(value = "添加")
+    @ApiOperation(value = "班级信息-添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody ClassBj classBj) {
         classService.save(classBj);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id删除")
+    @ApiOperation(value = "班级信息-根据id删除")
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public Result delete(@RequestParam Integer id) {
         classService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id更新")
+    @ApiOperation(value = "班级信息-根据id更新")
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Result update(ClassBj classBj) {
         classService.update(classBj);
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "根据id查询")
+    @ApiOperation(value = "班级信息-根据id查询")
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public Result detail(@RequestParam Integer id) {
         ClassBj classBj = classService.findById(id);
         return ResultGenerator.genSuccessResult(classBj);
     }
 
-    @ApiOperation(value = "分页查询")
+    @ApiOperation(value = "班级信息-分页查询")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
@@ -61,7 +61,7 @@ public class ClassController {
         return ResultGenerator.genSuccessResult(pageInfo);
     }
 
-    @ApiOperation(value = "获得所有同班同学信息")
+    @ApiOperation(value = "班级信息-获得所有同班同学信息")
     @RequestMapping(value = "/getclassmate", method = RequestMethod.GET)
     public List<Student> getClassMate(@RequestParam String className) {
         return classService.getClassMate(className);

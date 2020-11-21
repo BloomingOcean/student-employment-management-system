@@ -28,11 +28,13 @@ public class StudentStatusInfo {
 
     @Column(name = "enrollment_time")
     @ApiModelProperty(value = "入校时间")
-    private Date enrollmentTime;
+    private String enrollmentTime;
+//    private Date enrollmentTime;
 
     @Column(name = "graduation_time")
     @ApiModelProperty(value = "毕业时间")
-    private Date graduationTime;
+    private String graduationTime;
+//    private Date graduationTime;
 
     @Column(name = "difficult_students_category")
     @ApiModelProperty(value = "困难生类别")

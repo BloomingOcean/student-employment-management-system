@@ -1,9 +1,12 @@
-package com.conpany.project;
+package com.liyang.sems;
 
 
 import com.liyang.sems.Application;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.SpringBootVersion;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.SpringVersion;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest(classes = Application.class)
 @Transactional
 @Rollback
-public abstract class Tester {}
+public abstract class Tester {
+}
 
 
 
