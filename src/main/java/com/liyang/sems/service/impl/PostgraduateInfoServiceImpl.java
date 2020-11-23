@@ -27,8 +27,7 @@ public class PostgraduateInfoServiceImpl extends AbstractService<PostgraduateInf
      * @param stuId 用户id
      */
     public Result getInfoByUserId(Integer stuId) {
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(postgraduateInfoMapper.getInfoByUserId(stuId));
+        return ResultGenerator.genSuccessResult(postgraduateInfoMapper.getInfoByUserId(stuId));
     }
 
 

@@ -5,12 +5,10 @@ import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.dao.EmploymentInfoMapper;
 import com.liyang.sems.dao.PostgraduateInfoMapper;
 import com.liyang.sems.dao.StudentMapper;
+import com.liyang.sems.dao.TeacherMapper;
 import com.liyang.sems.model.Student;
 import com.liyang.sems.service.StudentService;
 import com.liyang.sems.core.AbstractService;
-import io.swagger.models.auth.In;
-import org.apache.commons.collections4.multimap.HashSetValuedHashMap;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,7 +30,24 @@ public class StudentServiceImpl extends AbstractService<Student> implements Stud
     private EmploymentInfoMapper employmentInfoMapper;
 
     @Resource
+    private TeacherMapper teacherMapper;
+
+    @Resource
     private PostgraduateInfoMapper postgraduateInfoMapper;
+
+    /**
+     * 插入学生信息
+     * @param student 学生
+     */
+    public Result saveStu(Student student) {
+        String stuName = student.getName();
+        if(studentMapper.judgmentRepeat(stuName) == 0 && teacherMapper.judgmentRepeat(stuName) == 0) {
+            studentMapper.saveStu(student);
+            return ResultGenerator.genSuccessResult();
+        } else {
+            return ResultGenerator.genFailResult("用户名重复,请重新输入");
+        }
+    }
 
     /**
      * 获取同一个班级的所有学生信息
@@ -50,10 +65,7 @@ public class StudentServiceImpl extends AbstractService<Student> implements Stud
      * @return 是否成功
      */
     public Result changePass(String pass, Integer stuId) {
-        ResultGenerator generator = new ResultGenerator();
-        Result result = generator.genSuccessResult(studentMapper.changePass(pass, stuId));
-        System.out.println("studentresult"+result);
-        return result;
+        return ResultGenerator.genSuccessResult(studentMapper.changePass(pass, stuId));
     }
 
     /**
@@ -64,9 +76,7 @@ public class StudentServiceImpl extends AbstractService<Student> implements Stud
         HashMap hashMap = new HashMap();
         hashMap.put("girlNumber",studentMapper.girlNumber());
         hashMap.put("boyNumber",studentMapper.boyNumber());
-        ResultGenerator generator = new ResultGenerator();
-        Result result = generator.genSuccessResult(hashMap);
-        return result;
+        return ResultGenerator.genSuccessResult(hashMap);
     }
 
     /**
@@ -80,9 +90,7 @@ public class StudentServiceImpl extends AbstractService<Student> implements Stud
         hashMap.put("8000-12000", studentMapper.getExpectedSalary8_12());
         hashMap.put("12000-16000", studentMapper.getExpectedSalary12_16());
         hashMap.put("16000-20000", studentMapper.getExpectedSalary16_20());
-        ResultGenerator generator = new ResultGenerator();
-        Result result = generator.genSuccessResult(hashMap);
-        return result;
+        return ResultGenerator.genSuccessResult(hashMap);
     }
 
     /**
@@ -93,7 +101,6 @@ public class StudentServiceImpl extends AbstractService<Student> implements Stud
         HashMap hashMap = new HashMap<>();
         hashMap.put("EmploymentAllNumber", employmentInfoMapper.getEmploymentAllNumber());
         hashMap.put("PostgraduateAllNumber", postgraduateInfoMapper.getPostgraduateAllNumber());
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(hashMap);
+        return ResultGenerator.genSuccessResult(hashMap);
     }
 }

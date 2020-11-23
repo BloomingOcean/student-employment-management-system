@@ -44,12 +44,12 @@ public class EmploymentInfoController {
         return ResultGenerator.genSuccessResult();
     }
 
-    @ApiOperation(value = "就业信息-根据id查询")
-    @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public Result detail(@RequestParam Integer id) {
-        EmploymentInfo employmentInfo = employmentInfoService.findById(id);
-        return ResultGenerator.genSuccessResult(employmentInfo);
-    }
+//    @ApiOperation(value = "就业信息-根据id查询")
+//    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+//    public Result detail(@RequestParam Integer id) {
+//        EmploymentInfo employmentInfo = employmentInfoService.findById(id);
+//        return ResultGenerator.genSuccessResult(employmentInfo);
+//    }
 
     @ApiOperation(value = "就业信息-分页查询")
     @RequestMapping(value = "/list", method = RequestMethod.GET)

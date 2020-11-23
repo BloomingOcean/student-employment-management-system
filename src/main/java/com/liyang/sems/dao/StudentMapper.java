@@ -1,7 +1,6 @@
 package com.liyang.sems.dao;
 
 import com.liyang.sems.core.Mapper;
-import com.liyang.sems.model.Province;
 import com.liyang.sems.model.Student;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
@@ -91,4 +90,23 @@ public interface StudentMapper extends Mapper<Student> {
     @Select("select COUNT(*) from employment_survey where graduate_expected_salary between 16000 and 20000;")
     Integer getExpectedSalary16_20();
 
+    /**
+     * 获得姓名为name的学生的数量
+     * @return 姓名为name的学生的数量
+     */
+    @Select("SELECT count(*) FROM student " +
+            "WHERE `name`=#{name};")
+    Integer judgmentRepeat(@Param("name") String name);
+
+    /**
+     * 添加学生
+     * @param student 学生实体
+     */
+    @Select("INSERT INTO student " +
+            "VALUES (#{stuId},#{name},#{gender},#{nation}," +
+            "#{birthday},#{politicalStatus},#{idNumber},#{onlyChild}," +
+            "#{phoneNumber},#{email},#{qqNumber},#{counselorId}," +
+            "#{studentStatusId},#{hukouId},#{password},#{classBjId}," +
+            "#{courseId})")
+    void saveStu(Student student);
 }

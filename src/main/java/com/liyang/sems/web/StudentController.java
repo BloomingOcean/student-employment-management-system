@@ -6,7 +6,6 @@ import com.liyang.sems.service.StudentService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +26,8 @@ public class StudentController {
     @ApiOperation(value = "学生信息-添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody Student student) {
-        studentService.save(student);
-        return ResultGenerator.genSuccessResult();
+//        studentService.save(student);
+        return studentService.saveStu(student);
     }
 
     @ApiOperation(value = "学生信息-根据id删除")

@@ -20,7 +20,6 @@ public class UnitDistributedServiceImpl implements UnitDistributedService {
      * @return 各种单位的人数
      */
     public Result getUnitDistributed(){
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(unitDistributedMapper.getUnitDistributed());
+        return ResultGenerator.genSuccessResult(unitDistributedMapper.getUnitDistributed());
     }
 }

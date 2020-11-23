@@ -13,12 +13,24 @@ import java.util.List;
 public interface StudentService extends Service<Student> {
 
     /**
+     * 插入学生信息
+     * @param student 学生
+     */
+    Result saveStu(Student student);
+
+    /**
      * 获取同一个班级的所有学生信息
      * @param classId 班级id
      * @return 同一个班级的所有学生信息
      */
     List<Student> getClassmate(Integer classId);
 
+    /**
+     * 修改学生密码
+     * @param pass 新密码
+     * @param stuId 学生id
+     * @return 是否成功
+     */
     Result changePass(@Param("pass") String pass, @Param("id") Integer stuId);
 
     /**
@@ -38,4 +50,5 @@ public interface StudentService extends Service<Student> {
      * @return 考研、就业人数
      */
     Result getPostEmplNumber();
+
 }

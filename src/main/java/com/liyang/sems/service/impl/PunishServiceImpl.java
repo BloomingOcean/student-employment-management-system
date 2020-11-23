@@ -27,10 +27,6 @@ public class PunishServiceImpl extends AbstractService<Punish> implements Punish
      * @param stuId
      */
     public Result getInfoByUserId(Integer stuId){
-        System.out.println("sql" + punishMapper.getInfoByUserId(stuId));
-        ResultGenerator resultGenerator = new ResultGenerator();
-        Result result = resultGenerator.genSuccessResult(punishMapper.getInfoByUserId(stuId));
-        System.out.println("result"+result);
-        return result;
+        return ResultGenerator.genSuccessResult(punishMapper.getInfoByUserId(stuId));
     }
 }

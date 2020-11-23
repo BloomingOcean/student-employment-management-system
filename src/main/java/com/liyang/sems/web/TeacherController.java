@@ -27,8 +27,8 @@ public class TeacherController {
     @ApiOperation(value = "老师基础信息-添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Result add(@RequestBody Teacher teacher) {
-        teacherService.save(teacher);
-        return ResultGenerator.genSuccessResult();
+//        teacherService.save(teacher);
+        return teacherService.saveTea(teacher);
     }
 
     @ApiOperation(value = "老师基础信息-根据id删除")
@@ -40,7 +40,7 @@ public class TeacherController {
 
     @ApiOperation(value = "老师基础信息-根据id更新")
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public Result update(@RequestBody Teacher teacher) {
+    public Result update(Teacher teacher) {
         teacherService.update(teacher);
         return ResultGenerator.genSuccessResult();
     }
@@ -66,4 +66,5 @@ public class TeacherController {
     public Result changePass(@RequestParam("password")String password, @RequestParam("id")Integer id) {
         return teacherService.changePass(password, id);
     }
+
 }

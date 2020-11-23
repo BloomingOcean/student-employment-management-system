@@ -27,8 +27,7 @@ public class EmploymentSurveyServiceImpl extends AbstractService<EmploymentSurve
      * @param stuId
      */
     public Result getInfoByUserId(Integer stuId){
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(employmentSurveyMapper.getInfoByUserId(stuId));
+        return ResultGenerator.genSuccessResult(employmentSurveyMapper.getInfoByUserId(stuId));
     }
 
 }

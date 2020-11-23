@@ -446,7 +446,7 @@ json :
 ```
 
 
-<a name="detailusingget_11"></a>
+<a name="detailusingget_10"></a>
 #### 专业信息-根据id查询
 ```
 GET /specialty/detail
@@ -790,7 +790,7 @@ json :
 ```
 
 
-<a name="detailusingget_15"></a>
+<a name="detailusingget_14"></a>
 #### 公司单位信息-根据id查询
 ```
 GET /unit/detail
@@ -1130,7 +1130,7 @@ json :
 ```
 
 
-<a name="detailusingget_9"></a>
+<a name="detailusingget_8"></a>
 #### 处分信息-根据id查询
 ```
 GET /punish/detail
@@ -1522,7 +1522,7 @@ json :
 ```
 
 
-<a name="detailusingget_10"></a>
+<a name="detailusingget_9"></a>
 #### 学校信息-根据id查询
 ```
 GET /school/detail
@@ -1933,7 +1933,7 @@ json :
 ```
 
 
-<a name="detailusingget_12"></a>
+<a name="detailusingget_11"></a>
 #### 学生信息-根据id查询
 ```
 GET /student/detail
@@ -1976,6 +1976,135 @@ json :
 {
   "id" : 0
 }
+```
+
+
+##### HTTP响应示例
+
+###### 响应 200
+```
+json :
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+```
+
+
+<a name="getclassgengerusingget"></a>
+#### 学生信息-获取学生性别数量
+```
+GET /student/getclassgenger
+```
+
+
+##### 响应
+
+|HTTP代码|说明|类型|
+|---|---|---|
+|**200**|OK|[Result](#result)|
+|**401**|Unauthorized|无内容|
+|**403**|Forbidden|无内容|
+|**404**|Not Found|无内容|
+
+
+##### 生成
+
+* `*/*`
+
+
+##### HTTP请求示例
+
+###### 请求 path
+```
+/student/getclassgenger
+```
+
+
+##### HTTP响应示例
+
+###### 响应 200
+```
+json :
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+```
+
+
+<a name="getexpectedsalaryusingget"></a>
+#### 学生信息-获取学生薪资水平分布
+```
+GET /student/getexceptsalary
+```
+
+
+##### 响应
+
+|HTTP代码|说明|类型|
+|---|---|---|
+|**200**|OK|[Result](#result)|
+|**401**|Unauthorized|无内容|
+|**403**|Forbidden|无内容|
+|**404**|Not Found|无内容|
+
+
+##### 生成
+
+* `*/*`
+
+
+##### HTTP请求示例
+
+###### 请求 path
+```
+/student/getexceptsalary
+```
+
+
+##### HTTP响应示例
+
+###### 响应 200
+```
+json :
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+```
+
+
+<a name="getpostemplnumberusingget"></a>
+#### 学生信息-获得考研就业人数
+```
+GET /student/getpostemplnumber
+```
+
+
+##### 响应
+
+|HTTP代码|说明|类型|
+|---|---|---|
+|**200**|OK|[Result](#result)|
+|**401**|Unauthorized|无内容|
+|**403**|Forbidden|无内容|
+|**404**|Not Found|无内容|
+
+
+##### 生成
+
+* `*/*`
+
+
+##### HTTP请求示例
+
+###### 请求 path
+```
+/student/getpostemplnumber
 ```
 
 
@@ -2293,7 +2422,7 @@ json :
 ```
 
 
-<a name="detailusingget_13"></a>
+<a name="detailusingget_12"></a>
 #### 学生基础信息-根据id查询
 ```
 GET /studentstatusinfo/detail
@@ -2336,6 +2465,49 @@ json :
 {
   "id" : 0
 }
+```
+
+
+##### HTTP响应示例
+
+###### 响应 200
+```
+json :
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+```
+
+
+<a name="getprovinceinfousingget"></a>
+#### 学生信息-获得学生省份分布人数
+```
+GET /studentstatusinfo/getprovinceinfo
+```
+
+
+##### 响应
+
+|HTTP代码|说明|类型|
+|---|---|---|
+|**200**|OK|[Result](#result)|
+|**401**|Unauthorized|无内容|
+|**403**|Forbidden|无内容|
+|**404**|Not Found|无内容|
+
+
+##### 生成
+
+* `*/*`
+
+
+##### HTTP请求示例
+
+###### 请求 path
+```
+/studentstatusinfo/getprovinceinfo
 ```
 
 
@@ -3038,65 +3210,6 @@ json :
 ```
 
 
-<a name="detailusingget_5"></a>
-#### 就业信息-根据id查询
-```
-GET /employmentinfo/detail
-```
-
-
-##### 参数
-
-|类型|名称|说明|类型|
-|---|---|---|---|
-|**Query**|**id**  <br>*必填*|id|integer (int32)|
-
-
-##### 响应
-
-|HTTP代码|说明|类型|
-|---|---|---|
-|**200**|OK|[Result](#result)|
-|**401**|Unauthorized|无内容|
-|**403**|Forbidden|无内容|
-|**404**|Not Found|无内容|
-
-
-##### 生成
-
-* `*/*`
-
-
-##### HTTP请求示例
-
-###### 请求 path
-```
-/employmentinfo/detail
-```
-
-
-###### 请求 query
-```
-json :
-{
-  "id" : 0
-}
-```
-
-
-##### HTTP响应示例
-
-###### 响应 200
-```
-json :
-{
-  "code" : 0,
-  "data" : "object",
-  "message" : "string"
-}
-```
-
-
 <a name="getinfobyidusingget_2"></a>
 #### 就业信息-根据用户id获得info
 ```
@@ -3140,6 +3253,49 @@ json :
 {
   "stuId" : 0
 }
+```
+
+
+##### HTTP响应示例
+
+###### 响应 200
+```
+json :
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+```
+
+
+<a name="getemploymentnumberusingget"></a>
+#### 就业信息-获取已就业人数和未就业人数
+```
+GET /employmentinfo/getemploymentnumber
+```
+
+
+##### 响应
+
+|HTTP代码|说明|类型|
+|---|---|---|
+|**200**|OK|[Result](#result)|
+|**401**|Unauthorized|无内容|
+|**403**|Forbidden|无内容|
+|**404**|Not Found|无内容|
+
+
+##### 生成
+
+* `*/*`
+
+
+##### HTTP请求示例
+
+###### 请求 path
+```
+/employmentinfo/getemploymentnumber
 ```
 
 
@@ -3456,7 +3612,7 @@ json :
 ```
 
 
-<a name="detailusingget_6"></a>
+<a name="detailusingget_5"></a>
 #### 就业意向信息-根据id查询
 ```
 GET /employmentsurvey/detail
@@ -3852,7 +4008,7 @@ json :
 ```
 
 
-<a name="detailusingget_7"></a>
+<a name="detailusingget_6"></a>
 #### 户口信息-根据id查询
 ```
 GET /hukou/detail
@@ -4853,7 +5009,7 @@ GET /login
 
 |HTTP代码|说明|类型|
 |---|---|---|
-|**200**|OK|integer (int32)|
+|**200**|OK|[Result](#result)|
 |**401**|Unauthorized|无内容|
 |**403**|Forbidden|无内容|
 |**404**|Not Found|无内容|
@@ -4888,7 +5044,11 @@ json :
 ###### 响应 200
 ```
 json :
-0
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
 ```
 
 
@@ -5102,7 +5262,7 @@ json :
 ```
 
 
-<a name="detailusingget_14"></a>
+<a name="detailusingget_13"></a>
 #### 老师基础信息-根据id查询
 ```
 GET /teacher/detail
@@ -5233,7 +5393,21 @@ PUT /teacher/update
 
 |类型|名称|说明|类型|
 |---|---|---|---|
-|**Body**|**teacher**  <br>*必填*|teacher|[教师基础信息表](#6881a6659c578e2dd0659c2035e0e424)|
+|**Query**|**address**  <br>*可选*|家庭地址|string|
+|**Query**|**birthDate**  <br>*可选*|出生日期|string|
+|**Query**|**courseId**  <br>*可选*|课程id|integer (int32)|
+|**Query**|**email**  <br>*可选*|电子邮箱|string|
+|**Query**|**gender**  <br>*可选*|教师性别|string|
+|**Query**|**idNumber**  <br>*可选*|身份证号|string|
+|**Query**|**jobNumber**  <br>*可选*|教师工号|integer (int32)|
+|**Query**|**name**  <br>*可选*|教师姓名|string|
+|**Query**|**nation**  <br>*可选*|民族|string|
+|**Query**|**password**  <br>*可选*|老师密码|string|
+|**Query**|**phoneNumber**  <br>*可选*|手机号码|string|
+|**Query**|**politicalStatus**  <br>*可选*|政治面貌|string|
+|**Query**|**qqNumber**  <br>*可选*|QQ号码|string|
+|**Query**|**teacherGrade**  <br>*可选*|教师等级|string|
+|**Query**|**teacherId**  <br>*可选*|教师号(主键)|integer (int32)|
 
 
 ##### 响应
@@ -5265,7 +5439,7 @@ PUT /teacher/update
 ```
 
 
-###### 请求 body
+###### 请求 query
 ```
 json :
 {
@@ -5442,7 +5616,7 @@ json :
 ```
 
 
-<a name="detailusingget_8"></a>
+<a name="detailusingget_7"></a>
 #### 考研信息-根据id查询
 ```
 GET /postgraduateinfo/detail
@@ -5694,6 +5868,54 @@ json :
   "schoolPostcode" : "string",
   "stuId" : 0
 }
+```
+
+
+##### HTTP响应示例
+
+###### 响应 200
+```
+json :
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+```
+
+
+<a name="9918a9832f6dc8128a129ec61274c7cb"></a>
+### 获得各种单位的人数
+Unit Distributed Controller
+
+
+<a name="getunitdistributedusingget"></a>
+#### 就业意向信息-获得各种单位的人数
+```
+GET /units/getunitdistributed
+```
+
+
+##### 响应
+
+|HTTP代码|说明|类型|
+|---|---|---|
+|**200**|OK|[Result](#result)|
+|**401**|Unauthorized|无内容|
+|**403**|Forbidden|无内容|
+|**404**|Not Found|无内容|
+
+
+##### 生成
+
+* `*/*`
+
+
+##### HTTP请求示例
+
+###### 请求 path
+```
+/units/getunitdistributed
 ```
 
 

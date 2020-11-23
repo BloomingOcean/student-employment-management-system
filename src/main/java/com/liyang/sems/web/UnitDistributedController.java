@@ -2,7 +2,6 @@ package com.liyang.sems.web;
 
 import com.liyang.sems.core.Result;
 import com.liyang.sems.service.UnitDistributedService;
-import com.liyang.sems.service.UnitService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+/**
+ * Created by LiYang on 2020/11/16.
+ */
 @RestController
 @RequestMapping("/units")
 @CrossOrigin

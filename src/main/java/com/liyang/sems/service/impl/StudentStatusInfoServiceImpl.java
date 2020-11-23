@@ -26,7 +26,6 @@ public class StudentStatusInfoServiceImpl extends AbstractService<StudentStatusI
      * @return 各个省份人数
      */
     public Result getProvinceInfo() {
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(studentStatusInfoMapper.getProvinceInfo());
+        return ResultGenerator.genSuccessResult(studentStatusInfoMapper.getProvinceInfo());
     }
 }

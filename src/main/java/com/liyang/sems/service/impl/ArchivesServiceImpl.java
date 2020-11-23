@@ -26,8 +26,7 @@ public class ArchivesServiceImpl extends AbstractService<Archives> implements Ar
      * @param stuId
      */
     public Result getInfoByUserId(Integer stuId){
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(archivesMapper.getInfoByUserId(stuId));
+        return ResultGenerator.genSuccessResult(archivesMapper.getInfoByUserId(stuId));
     }
 
 }

@@ -13,5 +13,17 @@ import java.util.List;
  */
 public interface TeacherService extends Service<Teacher> {
 
-    Result changePass(@Param("pass") String pass, @Param("id") Integer stuId);
+    /**
+     * 插入老师信息
+     * @param teacher 老师
+     */
+    Result saveTea(Teacher teacher);
+
+    /**
+     * 修改老师密码
+     * @param pass 新密码
+     * @param teaId 学生id
+     * @return 是否成功
+     */
+    Result changePass(String pass, Integer teaId);
 }

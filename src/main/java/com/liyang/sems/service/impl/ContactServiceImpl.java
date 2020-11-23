@@ -27,7 +27,6 @@ public class ContactServiceImpl extends AbstractService<Contact> implements Cont
      * @param stuId
      */
     public Result getInfoByUserId(Integer stuId){
-        ResultGenerator resultGenerator = new ResultGenerator();
-        return resultGenerator.genSuccessResult(contactMapper.getInfoByUserId(stuId));
+        return ResultGenerator.genSuccessResult(contactMapper.getInfoByUserId(stuId));
     }
 }

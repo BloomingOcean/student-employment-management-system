@@ -39,6 +39,7 @@ Api Documentation
 * 用户登录接口 : Login Controller
 * 老师基础信息管理 : Teacher Controller
 * 考研信息管理 : Postgraduate Info Controller
+* 获得各种单位的人数 : Unit Distributed Controller
 * 课程信息管理 : Course Controller
 * 辅导员信息管理 : Counselor Controller
 

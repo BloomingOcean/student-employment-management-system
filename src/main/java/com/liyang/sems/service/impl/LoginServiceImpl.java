@@ -1,5 +1,7 @@
 package com.liyang.sems.service.impl;
 
+import com.liyang.sems.core.Result;
+import com.liyang.sems.core.ResultGenerator;
 import com.liyang.sems.dao.StudentMapper;
 import com.liyang.sems.dao.TeacherMapper;
 import com.liyang.sems.service.LoginService;
@@ -19,13 +21,11 @@ public class LoginServiceImpl implements LoginService {
     private TeacherMapper teacherMapper;
 
     @Override
-    public Integer login(Integer judge, String name, String password) {
-        if(judge == 0){
-            return studentMapper.login(name, password);
+    public Result login(Integer judge, String name, String password) {
+        if(judge == 0) {
+                return ResultGenerator.genSuccessResult(studentMapper.login(name, password));
         }else {
-            return teacherMapper.login(name, password);
+                return ResultGenerator.genSuccessResult(teacherMapper.login(name, password));
         }
-
     }
-
 }
